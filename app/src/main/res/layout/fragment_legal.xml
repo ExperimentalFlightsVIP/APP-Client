@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/welcome_text"
+        android:text="Legal Disclaimer"
+        android:textSize="30dp"
+        android:layout_margin="15dp"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_below="@+id/welcome_text"
+        android:text="IN NO EVENT SHALL YOUR FLYING CAMERA DRONES BE LIABLE FOR SPECIAL, INDIRECT, INCIDENTAL OR CONSEQUENTIAL DAMAGES RELATED TO THE USE OF PRODUCTS SOLD. INDEMNITY: PURCHASER SHALL INDEMNIFY AND HOLD HARMLESS YOUR FLYING CAMERA DRONE, ITS OFFICERS, DIRECTORS, AGENTS, REPRESENTATIVES AND EMPLOYEES FROM ANY AND ALL CLAIMS, LIABILITIES, DAMAGES, AND EXPENSES (INCLUDING ATTORNEYS’ FEES ACTUALLY INCURRED) ON ACCOUNT OF DEATH OR INJURY TO ANY PERSON OR DAMAGE TO ANY PROPERTY ARISING FROM OR IN CONNECTION WITH ANY GOODS SUPPLIED. THIS INDEMNITY SHALL APPLY WITHOUT REGARD TO WHETHER THE CLAIM, DAMAGE, LIABILITY OR EXPENSE IS BASED ON BREACH OF CONTRACT, BREACH OF WARRANTY, NEGLIGENCE, STRICT LIABILITY, OR OTHER."
+        android:textSize="15dp"
+        />
+
+</RelativeLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.tejasvedantham.dronedelivery.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_order_drone"
+        android:name="com.example.tejasvedantham.dronedelivery.OrderDroneFragment"
+        android:label="Order Drone"
+        tools:layout="@layout/fragment_order_drone" />
+
+    <fragment
+        android:id="@+id/nav_my_history"
+        android:name="com.example.tejasvedantham.dronedelivery.MyHistoryFragment"
+        android:label="My History"
+        tools:layout="@layout/fragment_my_history" />
+
+    <fragment
+        android:id="@+id/nav_legal"
+        android:name="com.example.tejasvedantham.dronedelivery.LegalFragment"
+        android:label="Legal"
+        tools:layout="@layout/fragment_legal" />
+
+    <fragment
+        android:id="@+id/nav_drones_near_me"
+        android:name="com.example.tejasvedantham.dronedelivery.DronesNearMeFragment"
+        android:label="Drones Near Me"
+        tools:layout="@layout/fragment_legal" />
+
+    <fragment
+        android:id="@+id/nav_share"
+        android:name="com.example.tejasvedantham.dronedelivery.ShareFragment"
+        android:label="@string/menu_share"
+        tools:layout="@layout/fragment_share" />
+
+    <fragment
+        android:id="@+id/nav_send"
+        android:name="com.example.tejasvedantham.dronedelivery.SendFragment"
+        android:label="@string/menu_send"
+        tools:layout="@layout/fragment_send" />
+</navigation>
