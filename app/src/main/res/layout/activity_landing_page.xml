@@ -15,21 +15,24 @@
         />
 
     <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        />
+        android:id="@+id/logoView"
+        android:layout_marginTop="25dp"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_centerHorizontal="true" />
 
     <EditText
         android:id="@+id/usernameField"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Username"
-        android:layout_margin="10dp"
+        android:layout_below="@+id/logoView"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/imageView"
-        />
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:hint="Username"
+        android:textColorLink="#B3A369" />
 
     <EditText
         android:id="@+id/passwordField"
@@ -45,12 +48,15 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
-        android:layout_margin="10dp"
-        app:srcCompat="@android:drawable/ic_menu_send"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:onClick="login"
-        />
+        app:backgroundTint="#B3A369"
+        app:srcCompat="@android:drawable/ic_menu_send" />
 
 
 </RelativeLayout>
