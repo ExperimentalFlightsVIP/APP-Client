@@ -1,35 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:id="@+id/map"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/welcome_text"
-        android:text="Welcome, Tejas!"
-        android:textSize="30dp"
-        android:layout_margin="15dp"
-        />
-
-    <TextView
-        android:id="@+id/amazonUsernameText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Amazon Username:"
-        android:layout_below="@+id/welcome_text"
-        android:layout_margin="15dp"
-        android:textSize="20dp"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Georgia Tech Username:"
-        android:layout_below="@+id/amazonUsernameText"
-        android:layout_marginLeft="15dp"
-        android:textSize="20dp"
-        />
-</RelativeLayout>
+    android:layout_height="match_parent"/>
