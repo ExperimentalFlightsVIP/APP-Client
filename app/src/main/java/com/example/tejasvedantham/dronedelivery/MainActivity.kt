@@ -29,6 +29,9 @@ class MainActivity : AppCompatActivity() {
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration!!)
         NavigationUI.setupWithNavController(navigationView, navController)
+
+        //ISSUE FOUND: The only thing every shown is a static map populated by the fragment_home file. Need to change this so it points to the
+        //MapsActivity file.
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
