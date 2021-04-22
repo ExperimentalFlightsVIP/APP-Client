@@ -2,6 +2,7 @@ package com.example.tejasvedantham.dronedelivery;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,9 +22,14 @@ import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
+import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.maps.model.Polyline;
+import com.google.android.gms.maps.model.PolylineOptions;
+import com.google.android.gms.maps.model.RoundCap;
 
 public class MapsActivity extends Fragment {
 
@@ -60,9 +66,28 @@ public class MapsActivity extends Fragment {
                         googleMap.getUiSettings().setAllGesturesEnabled(true);
                         LatLng techTower = new LatLng(33.772347, -84.394706);
                         googleMap.addMarker(new MarkerOptions().position(techTower).title("Tech Tower").snippet("The Famous GT Landmark!"));
+                        LatLng eastRes = new LatLng(33.772443, -84.391807);
+                        googleMap.addMarker(new MarkerOptions().position(eastRes).title("East Residential Delivery Station").snippet("The first delivery station!"));
                         CameraPosition cameraPosition = new CameraPosition.Builder().target(techTower).zoom(17.0f).build();
                         CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(cameraPosition);
                         googleMap.moveCamera(cameraUpdate);
+
+                        GroundOverlayOptions drone = new GroundOverlayOptions()
+                                .image(BitmapDescriptorFactory.fromResource(R.drawable.droneicon))
+                                .position(techTower, 30.0f);
+                        googleMap.addGroundOverlay(drone);
+
+                        Polyline testRoute = googleMap.addPolyline(new PolylineOptions()
+                        .add(
+                                techTower,
+                                new LatLng(33.771651, -84.394029),
+                                new LatLng(33.771411, -84.392163),
+                                new LatLng(33.771949, -84.391960),
+                                eastRes
+                        ));
+                        testRoute.setStartCap(new RoundCap());
+                        testRoute.setEndCap(new RoundCap());
+                        testRoute.setColor(Color.rgb(179, 163, 105));
 
                     }
 
