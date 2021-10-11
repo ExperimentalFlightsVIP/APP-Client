@@ -6,64 +6,12 @@
     android:layout_height="match_parent">
 
     <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:id="@+id/welcome_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="130dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
         android:text="My History"
-        android:textSize="30dp" />
-
-    <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:src="@drawable/logo" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:text="Delivery Date: 2020.12.31"
-        android:textSize="20dp" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="290dp"
-        android:layout_marginTop="130dp"
-        android:backgroundTint="#B3A369"
-        android:onClick="login"
-        android:text="Details" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="210dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="15dp"
-        android:text="Delivery Date: 2021.01.01"
-        android:textSize="20dp" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="290dp"
-        android:layout_marginTop="200dp"
-        android:backgroundTint="#B3A369"
-        android:onClick="login"
-        android:text="Details" />
-
+        android:textSize="40dp"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="15dp"
+        />
 </RelativeLayout>

@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<!-- Demo feature of drones near me based on zipcode, not yet implemented -->
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,50 +9,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/welcome_text"
-        android:text="Drones near me?"
+        android:text="Drones near me"
         android:textSize="40dp"
         android:layout_centerHorizontal="true"
         android:layout_margin="15dp"
         />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Enter your zip code below."
-        android:textSize="20dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="130dp"
-        />
-
-    <EditText
-        android:id="@+id/zipCode"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="200dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:hint="Enter zip code"
-        android:textColorLink="#B3A369" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="300dp"
-        android:backgroundTint="#B3A369"
-        android:onClick="login"
-        android:text="Enter" />
-
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_marginTop="400dp"
-        android:layout_marginLeft="20dp"
-        android:layout_centerHorizontal="true"
-        android:src="@drawable/logo" />
-
 </RelativeLayout>

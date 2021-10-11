@@ -2,9 +2,7 @@ package com.example.tejasvedantham.dronedelivery;
 
 import android.Manifest;
 import android.content.pm.PackageManager;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,30 +10,20 @@ import android.view.ViewGroup;
 import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
-import com.google.android.gms.maps.model.GroundOverlayOptions;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
-import com.google.android.gms.maps.model.Polyline;
-import com.google.android.gms.maps.model.PolylineOptions;
-import com.google.android.gms.maps.model.RoundCap;
 
 public class MapsActivity extends Fragment {
 
-    //MapView mMapView;
+    MapView mMapView;
     private GoogleMap googleMap;
-    private SupportMapFragment mSupportMapFragment;
 //    Tried to set a marker with the onCreate Method. Didn't work.
 //    @Override
 //    public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -48,60 +36,63 @@ public class MapsActivity extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-        Log.d("MyApp", "root view inflated: " + rootView );
-        mSupportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
-        System.out.println(mSupportMapFragment);
-        if (mSupportMapFragment == null) {
-            FragmentManager fragmentManager = getFragmentManager();
-            FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            mSupportMapFragment = SupportMapFragment.newInstance();
-            fragmentTransaction.replace(R.id.map, mSupportMapFragment).commit();
+
+        mMapView = (MapView) rootView.findViewById(R.id.map);
+        mMapView.onCreate(savedInstanceState);
+
+        mMapView.onResume(); // needed to get the map to display immediately
+
+        try {
+            MapsInitializer.initialize(getActivity().getApplicationContext());
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        if (mSupportMapFragment != null) {
-            mSupportMapFragment.getMapAsync(new OnMapReadyCallback() {
-                @Override
-                public void onMapReady(GoogleMap googleMap) {
-                    if (googleMap != null) {
-                        googleMap.getUiSettings().setAllGesturesEnabled(true);
-                        LatLng techTower = new LatLng(33.772347, -84.394706);
-                        googleMap.addMarker(new MarkerOptions().position(techTower).title("Tech Tower").snippet("The Famous GT Landmark!"));
-                        LatLng eastRes = new LatLng(33.772443, -84.391807);
-                        googleMap.addMarker(new MarkerOptions().position(eastRes).title("East Residential Delivery Station").snippet("The first delivery station!"));
-                        CameraPosition cameraPosition = new CameraPosition.Builder().target(techTower).zoom(17.0f).build();
-                        CameraUpdate cameraUpdate = CameraUpdateFactory.newCameraPosition(cameraPosition);
-                        googleMap.moveCamera(cameraUpdate);
+        mMapView.getMapAsync(new OnMapReadyCallback() {
+            public void onMapReady(GoogleMap mMap) {
+                googleMap = mMap;
 
-                        GroundOverlayOptions drone = new GroundOverlayOptions()
-                                .image(BitmapDescriptorFactory.fromResource(R.drawable.droneicon))
-                                .position(techTower, 30.0f);
-                        googleMap.addGroundOverlay(drone);
-
-                        Polyline testRoute = googleMap.addPolyline(new PolylineOptions()
-                        .add(
-                                techTower,
-                                new LatLng(33.771651, -84.394029),
-                                new LatLng(33.771411, -84.392163),
-                                new LatLng(33.771949, -84.391960),
-                                eastRes
-                        ));
-                        testRoute.setStartCap(new RoundCap());
-                        testRoute.setEndCap(new RoundCap());
-                        testRoute.setColor(Color.rgb(179, 163, 105));
-
-                    }
-
+                // For showing user location
+                if (ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_FINE_LOCATION)
+                        != PackageManager.PERMISSION_GRANTED
+                        && ActivityCompat.checkSelfPermission(getActivity(), Manifest.permission.ACCESS_COARSE_LOCATION)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    return;
                 }
-            });
-        }
+                googleMap.setMyLocationEnabled(true);
+
+                // For dropping a marker at a point on the Map
+                LatLng techTower = new LatLng(33.77, -84.39);
+                googleMap.addMarker(new MarkerOptions().position(techTower).title("Tech Tower").snippet("The Famous GT Landmark!"));
+
+                // For zooming automatically to the location of the marker
+                CameraPosition cameraPosition = new CameraPosition.Builder().target(techTower).zoom(12).build();
+                googleMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            }
+        });
+
         return rootView;
     }
 
-    public void onMapReady(GoogleMap googleMap) {
-        LatLng techTower = new LatLng(33.77, -84.39);
-        googleMap.addMarker(new MarkerOptions().position(techTower).title("Tech Tower").snippet("The Famous GT Landmark!"));
+    public void onResume() {
+        super.onResume();
+        mMapView.onResume();
     }
 
+    public void onPause() {
+        super.onPause();
+        mMapView.onPause();
+    }
+
+    public void onDestroy() {
+        super.onDestroy();
+        mMapView.onDestroy();
+    }
+
+    public void onLowMemory() {
+        super.onLowMemory();
+        mMapView.onLowMemory();
+    }
 }
 
 

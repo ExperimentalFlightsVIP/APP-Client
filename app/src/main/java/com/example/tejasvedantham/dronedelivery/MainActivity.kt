@@ -2,6 +2,7 @@ package com.example.tejasvedantham.dronedelivery
 
 import android.os.Bundle
 import android.view.Menu
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.drawerlayout.widget.DrawerLayout
@@ -9,9 +10,14 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
+
 
 class MainActivity : AppCompatActivity() {
     private var mAppBarConfiguration: AppBarConfiguration? = null
+    private lateinit var auth: FirebaseAuth
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,9 +35,9 @@ class MainActivity : AppCompatActivity() {
         val navController = Navigation.findNavController(this, R.id.nav_host_fragment)
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration!!)
         NavigationUI.setupWithNavController(navigationView, navController)
+        //initializing shared instance of FireBase Auth object
 
-        //ISSUE FOUND: The only thing every shown is a static map populated by the fragment_home file. Need to change this so it points to the
-        //MapsActivity file.
+
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -45,4 +51,5 @@ class MainActivity : AppCompatActivity() {
         return (NavigationUI.navigateUp(navController, mAppBarConfiguration!!)
                 || super.onSupportNavigateUp())
     }
+
 }
