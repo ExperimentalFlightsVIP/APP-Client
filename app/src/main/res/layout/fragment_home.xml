@@ -1,7 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-// <RelativeLayout/>
-
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     android:name="com.google.android.gms.maps.SupportMapFragment"
     android:id="@+id/map"
@@ -38,15 +35,15 @@
         android:text="Georgia Tech Username:"
         android:textSize="15dp" />
 
-    <TextView
-        android:id="@+id/nav_order_drone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="75dp"
-        android:layout_marginTop="430dp"
-        android:text="Order Drone"
-        android:onClick="login"
-        android:textSize="15dp" />
+   <TextView
+       android:id="@+id/nav_order_drone"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_marginLeft="75dp"
+       android:layout_marginTop="430dp"
+       android:onClick="login"
+       android:text="Order Drone"
+       android:textSize="15dp" />
 
     <TextView
         android:id="@+id/nav_my_history"

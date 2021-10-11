@@ -1,6 +1,5 @@
-// Demo feature of drones near me based on zipcode, not yet implemented 
-
 <?xml version="1.0" encoding="utf-8"?>
+<!--Demo feature of drones near me based on zipcode, not yet implemented-->
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
