@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< HEAD
         <entry key="..\:/School/2021-2022/VIP/APP-Client/app/src/main/res/layout/activity_landing_page.xml" value="0.18854166666666666" />
         <entry key="..\:/School/2021-2022/VIP/APP-Client/app/src/main/res/layout/activity_main.xml" value="0.18854166666666666" />
         <entry key="..\:/School/2021-2022/VIP/APP-Client/app/src/main/res/layout/content_main.xml" value="0.18854166666666666" />
@@ -15,6 +16,17 @@
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+=======
+        <entry key="..\:/Users/caden/Documents/VIP - Experimental Flight/APP-Client/app/src/main/res/layout/activity_landing_page.xml" value="0.5" />
+        <entry key="..\:/Users/caden/Documents/VIP - Experimental Flight/APP-Client/app/src/main/res/layout/activity_register.xml" value="0.5" />
+        <entry key="..\:/Users/caden/Documents/VIP - Experimental Flight/APP-Client/app/src/main/res/layout/fragment_drones_near_me.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/caden/Documents/VIP - Experimental Flight/APP-Client/app/src/main/res/layout/fragment_home.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/caden/Documents/VIP - Experimental Flight/APP-Client/app/src/main/res/layout/fragment_order_drone.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+>>>>>>> fa77b0d4e17b99895cd3d909ed96ceda9d647522
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">

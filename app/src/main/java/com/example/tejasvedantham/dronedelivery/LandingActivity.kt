@@ -22,7 +22,8 @@ class LandingActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun test(v: View) {
-        println("HELLOOOOO")
+    fun register(v: View?) {
+        val intent = Intent(this, RegisterActivity::class.java)
+        startActivity(intent)
     }
 }
