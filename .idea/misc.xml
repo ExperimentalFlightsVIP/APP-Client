@@ -3,7 +3,6 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-<<<<<<< HEAD
         <entry key="..\:/School/2021-2022/VIP/APP-Client/app/src/main/res/layout/activity_landing_page.xml" value="0.18854166666666666" />
         <entry key="..\:/School/2021-2022/VIP/APP-Client/app/src/main/res/layout/activity_main.xml" value="0.18854166666666666" />
         <entry key="..\:/School/2021-2022/VIP/APP-Client/app/src/main/res/layout/content_main.xml" value="0.18854166666666666" />
@@ -16,7 +15,6 @@
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
-=======
         <entry key="..\:/Users/caden/Documents/VIP - Experimental Flight/APP-Client/app/src/main/res/layout/activity_landing_page.xml" value="0.5" />
         <entry key="..\:/Users/caden/Documents/VIP - Experimental Flight/APP-Client/app/src/main/res/layout/activity_register.xml" value="0.5" />
         <entry key="..\:/Users/caden/Documents/VIP - Experimental Flight/APP-Client/app/src/main/res/layout/fragment_drones_near_me.xml" value="0.20520833333333333" />
