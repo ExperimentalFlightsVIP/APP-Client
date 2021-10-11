@@ -14,31 +14,23 @@
         android:layout_alignParentBottom="true"
         />
 
-    <ImageView
-        android:id="@+id/logoView"
-        android:layout_marginTop="25dp"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_centerHorizontal="true" />
-
     <EditText
-        android:id="@+id/usernameField"
+        android:id="@+id/r_usernameField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/logoView"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="10dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:hint="Username"
         android:textColorLink="#B3A369" />
 
     <EditText
-        android:id="@+id/passwordField"
+        android:id="@+id/r_passwordField"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/usernameField"
+        android:layout_below="@+id/r_usernameField"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
@@ -47,32 +39,17 @@
         android:hint="Password"
         android:inputType="textPassword" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/r_passwordField"
+        android:layout_centerHorizontal="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:onClick="login"
-        app:backgroundTint="#B3A369"
-        app:srcCompat="@android:drawable/ic_menu_send" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:onClick="register"
-        app:backgroundTint="#B3A369"
-        app:srcCompat="@android:drawable/ic_menu_add" />
-
+        android:text="Register"
+        android:textColor="@color/colorAccent"
+        app:backgroundTint="#B3A369" />
 
 </RelativeLayout>
