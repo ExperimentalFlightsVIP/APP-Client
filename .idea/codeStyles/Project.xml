@@ -4,10 +4,7 @@
       <option name="CODE_STYLE_DEFAULTS" value="KOTLIN_OFFICIAL" />
     </JetCodeStyleSettings>
     <codeStyleSettings language="XML">
-<<<<<<< HEAD
-=======
       <option name="FORCE_REARRANGE_MODE" value="1" />
->>>>>>> fa77b0d4e17b99895cd3d909ed96ceda9d647522
       <indentOptions>
         <option name="CONTINUATION_INDENT_SIZE" value="4" />
       </indentOptions>
