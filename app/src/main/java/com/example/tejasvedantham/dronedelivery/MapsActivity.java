@@ -50,7 +50,6 @@ public class MapsActivity extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         Log.d("MyApp", "root view inflated: " + rootView );
         mSupportMapFragment = (SupportMapFragment) getChildFragmentManager().findFragmentById(R.id.map);
-        System.out.println(mSupportMapFragment);
         if (mSupportMapFragment == null) {
             FragmentManager fragmentManager = getFragmentManager();
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -96,12 +95,6 @@ public class MapsActivity extends Fragment {
         }
         return rootView;
     }
-
-    public void onMapReady(GoogleMap googleMap) {
-        LatLng techTower = new LatLng(33.77, -84.39);
-        googleMap.addMarker(new MarkerOptions().position(techTower).title("Tech Tower").snippet("The Famous GT Landmark!"));
-    }
-
 }
 
 
