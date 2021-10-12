@@ -6,12 +6,14 @@ import android.view.View
 import android.widget.EditText
 
 class RegisterActivity : AppCompatActivity() {
-    var usernameField: EditText = findViewById(R.id.r_usernameField)
-    var passwordField: EditText = findViewById(R.id.r_passwordField)
+    lateinit var usernameField: EditText
+    lateinit var passwordField: EditText
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
+        usernameField = findViewById(R.id.r_usernameField)
+        passwordField = findViewById(R.id.r_passwordField)
     }
 
     fun register(v: View?) {
