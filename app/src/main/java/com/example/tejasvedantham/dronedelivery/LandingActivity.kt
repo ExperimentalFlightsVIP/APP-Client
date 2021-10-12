@@ -15,8 +15,11 @@ import com.google.android.material.snackbar.Snackbar
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+<<<<<<< Updated upstream
 import java.security.AccessController.getContext
 
+=======
+>>>>>>> Stashed changes
 
 class LandingActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -26,10 +29,12 @@ class LandingActivity : AppCompatActivity() {
         val logoImage = findViewById<View>(R.id.logoView) as ImageView
         logoImage.setImageResource(R.drawable.logo)
         logoImage.adjustViewBounds = true
+<<<<<<< Updated upstream
         //initializing shared instance of FireBase Auth object
+=======
+>>>>>>> Stashed changes
         auth = Firebase.auth
     }
-
     fun login(v: View?) {
         val user_name_area = findViewById<EditText>(R.id.usernameField)
         val password_area = findViewById<EditText>(R.id.passwordField)
@@ -38,12 +43,28 @@ class LandingActivity : AppCompatActivity() {
         Log.i("username", username.toString())
         Log.i("password", password.toString())
         auth.signInWithEmailAndPassword(username.toString(), password.toString())
+<<<<<<< Updated upstream
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
                         // Sign in success, move on to UI/maps section
                         Snackbar.make(v!!, "Login Successful", Snackbar.LENGTH_LONG).show()
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
+=======
+            .addOnCompleteListener(this) { task ->
+                if (task.isSuccessful) {
+                    // Sign in success, move on to UI/maps section
+                    Snackbar.make(v!!, "Login Successful", Snackbar.LENGTH_LONG).show()
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+
+                } else {
+                    // If sign in fails, do nothing
+                }
+            }
+        // [END sign_in_with_email]
+    }
+>>>>>>> Stashed changes
 
                     } else {
                         // If sign in fails, do nothing
