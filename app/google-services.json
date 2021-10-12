@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "334578388373",
-    "project_id": "drone-delivery-16436",
-    "storage_bucket": "drone-delivery-16436.appspot.com"
+    "project_number": "593030250609",
+    "project_id": "experimentalflightssample",
+    "storage_bucket": "experimentalflightssample.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:334578388373:android:b55e7534a9149df88bfa9c",
+        "mobilesdk_app_id": "1:593030250609:android:30dd41a875ff51d3af9bd0",
         "android_client_info": {
           "package_name": "com.example.tejasvedantham.dronedelivery"
         }
       },
       "oauth_client": [
         {
-          "client_id": "334578388373-fien154ojvntnn6couvp2mq4g6pmkvlq.apps.googleusercontent.com",
+          "client_id": "593030250609-6tdvdaq8jddkefpl1m44cjgl8pod7q2i.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDyqcCB47PxR2IAKTM1CSE3C80QlMlxYzs"
+          "current_key": "AIzaSyDkITtdRNdJj3nk5jOYN-40OeDeu4Wnqo8"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "334578388373-fien154ojvntnn6couvp2mq4g6pmkvlq.apps.googleusercontent.com",
+              "client_id": "593030250609-6tdvdaq8jddkefpl1m44cjgl8pod7q2i.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

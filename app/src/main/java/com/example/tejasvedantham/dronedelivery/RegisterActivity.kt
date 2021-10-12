@@ -25,16 +25,20 @@ class RegisterActivity : AppCompatActivity() {
     }
 
     fun register(v: View?) {
-        auth.createUserWithEmailAndPassword(usernameField.text.toString(), passwordField.text.toString())
-            .addOnCompleteListener(this) { task ->
-                if (task.isSuccessful) {
-                    Toast.makeText(baseContext, "Registration Succeeded", Toast.LENGTH_SHORT).show()
+        if (usernameField.text.isNotBlank() and passwordField.text.isNotBlank()) {
+            auth.createUserWithEmailAndPassword(usernameField.text.toString(), passwordField.text.toString())
+                .addOnCompleteListener(this) { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(baseContext, "Registration Succeeded", Toast.LENGTH_SHORT).show()
 
-                    val intent = Intent(this, MainActivity::class.java)
-                    startActivity(intent)
-                } else {
-                    Toast.makeText(baseContext, "Registration Failed: " + task.exception.toString(), Toast.LENGTH_LONG).show()
+                        val intent = Intent(this, MainActivity::class.java)
+                        startActivity(intent)
+                    } else {
+                        Toast.makeText(baseContext, "Registration Failed: " + task.exception.toString(), Toast.LENGTH_LONG).show()
+                    }
                 }
-            }
+        } else {
+            Toast.makeText(baseContext, "Username or password cannot be blank", Toast.LENGTH_SHORT).show()
+        }
     }
 }
