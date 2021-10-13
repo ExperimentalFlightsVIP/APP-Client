@@ -34,7 +34,7 @@ class OrderDroneFragment : Fragment() {
 
         // Populate the package selection dropdown (Spinner) with items. For now, it uses a list of dummy items in the string resources.
         ArrayAdapter.createFromResource(
-            this.context,
+            this.context!!,
             R.array.packages_array,
             android.R.layout.simple_spinner_item
         ).also { adapter ->

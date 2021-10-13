@@ -1,7 +1,5 @@
 package com.example.tejasvedantham.dronedelivery;
 
-import android.Manifest;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,8 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -18,8 +14,6 @@ import androidx.fragment.app.FragmentTransaction;
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
-import com.google.android.gms.maps.MapView;
-import com.google.android.gms.maps.MapsInitializer;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
@@ -30,6 +24,11 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.maps.model.RoundCap;
+
+import org.json.JSONException;
+
+import java.io.IOException;
+import java.util.ArrayList;
 
 public class MapsActivity extends Fragment {
 
@@ -76,14 +75,16 @@ public class MapsActivity extends Fragment {
                                 .position(techTower, 30.0f);
                         googleMap.addGroundOverlay(drone);
 
-                        Polyline testRoute = googleMap.addPolyline(new PolylineOptions()
-                        .add(
-                                techTower,
-                                new LatLng(33.771651, -84.394029),
-                                new LatLng(33.771411, -84.392163),
-                                new LatLng(33.771949, -84.391960),
-                                eastRes
-                        ));
+                        Polyline testRoute = null;
+                        try {
+                            testRoute = googleMap.addPolyline(new PolylineOptions()
+                            .addAll( Requests.requestRoute()
+                            ));
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                         testRoute.setStartCap(new RoundCap());
                         testRoute.setEndCap(new RoundCap());
                         testRoute.setColor(Color.rgb(179, 163, 105));

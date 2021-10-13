@@ -22,7 +22,7 @@ class LandingActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun register(v: View?) {
+    fun registerActivity(v: View?) {
         val intent = Intent(this, RegisterActivity::class.java)
         startActivity(intent)
     }
