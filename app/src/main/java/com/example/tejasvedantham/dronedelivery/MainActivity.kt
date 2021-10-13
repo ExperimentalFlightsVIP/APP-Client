@@ -9,10 +9,19 @@ import androidx.navigation.Navigation
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import com.google.android.material.navigation.NavigationView
+import android.os.StrictMode
+import android.os.StrictMode.ThreadPolicy
+
 
 class MainActivity : AppCompatActivity() {
     private var mAppBarConfiguration: AppBarConfiguration? = null
     override fun onCreate(savedInstanceState: Bundle?) {
+        //!! WARNING - THE FOLLOWING TWO LINES LIKELY WILL RESULT IN CRASHES/BUGS/SLOW LOADS IN LATER ITERATIONS !!
+        val policy = ThreadPolicy.Builder().permitAll().build()
+        StrictMode.setThreadPolicy(policy)
+        //These two lines enable the http requests in Requests.java to be done on the main thread.
+        //These requests should be made Async promptly
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val toolbar = findViewById<Toolbar>(R.id.toolbar)
