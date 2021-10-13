@@ -25,9 +25,6 @@ import com.google.android.gms.maps.model.Polyline;
 import com.google.android.gms.maps.model.PolylineOptions;
 import com.google.android.gms.maps.model.RoundCap;
 
-import org.json.JSONException;
-
-import java.io.IOException;
 import java.util.ArrayList;
 
 public class MapsActivity extends Fragment {
@@ -61,6 +58,8 @@ public class MapsActivity extends Fragment {
                 @Override
                 public void onMapReady(GoogleMap googleMap) {
                     if (googleMap != null) {
+                        Requests req = new Requests(MapsActivity.this, googleMap);
+                        req.execute();
                         googleMap.getUiSettings().setAllGesturesEnabled(true);
                         LatLng techTower = new LatLng(33.772347, -84.394706);
                         googleMap.addMarker(new MarkerOptions().position(techTower).title("Tech Tower").snippet("The Famous GT Landmark!"));
@@ -74,21 +73,6 @@ public class MapsActivity extends Fragment {
                                 .image(BitmapDescriptorFactory.fromResource(R.drawable.droneicon))
                                 .position(techTower, 30.0f);
                         googleMap.addGroundOverlay(drone);
-
-                        Polyline testRoute = null;
-                        try {
-                            testRoute = googleMap.addPolyline(new PolylineOptions()
-                            .addAll( Requests.requestRoute()
-                            ));
-                        } catch (IOException e) {
-                            e.printStackTrace();
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-                        testRoute.setStartCap(new RoundCap());
-                        testRoute.setEndCap(new RoundCap());
-                        testRoute.setColor(Color.rgb(179, 163, 105));
-
                     }
 
                 }
@@ -97,8 +81,3 @@ public class MapsActivity extends Fragment {
         return rootView;
     }
 }
-
-
-
-
-
