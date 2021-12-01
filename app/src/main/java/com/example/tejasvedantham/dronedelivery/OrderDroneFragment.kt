@@ -8,6 +8,9 @@ import android.widget.*
 import androidx.fragment.app.Fragment
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 data class Order(val station: String? = null, val pkg: String? = null, val gtid: Int? = null) {
     val status = "In Transit"
@@ -30,7 +33,8 @@ class OrderDroneFragment : Fragment() {
         val submitButton: Button = view.findViewById(R.id.submit_order_button)
 
         // Initialize Firebase database
-        val database: FirebaseDatabase = FirebaseDatabase.getInstance("https://drone-delivery-16436-default-rtdb.firebaseio.com/")
+        //val database: FirebaseDatabase = FirebaseDatabase.getInstance("https://drone-delivery-16436-default-rtdb.firebaseio.com/")
+        val firestoredb = Firebase.firestore
 
         // Populate the package selection dropdown (Spinner) with items. For now, it uses a list of dummy items in the string resources.
         ArrayAdapter.createFromResource(
@@ -67,14 +71,25 @@ class OrderDroneFragment : Fragment() {
                 val order: Order = Order(selectedStation, selectedPackage, gtid.toString().toInt())
 
                 // Create a database reference for Firebase and set its value to the Order triple.
-                val databaseReference: DatabaseReference = database.getReference(gtid.toString())
-                databaseReference.setValue(order)
+//                val databaseReference: DatabaseReference = database.getReference(gtid.toString())
+//                databaseReference.setValue(order)
 
-                Toast.makeText(
-                    this.context,
-                    "Success!",
-                    Toast.LENGTH_SHORT
-                ).show()
+                firestoredb.collection("orders")
+                    .add(order)
+                    .addOnSuccessListener {
+                        Toast.makeText(
+                            this.context,
+                            "Success!",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+                    .addOnFailureListener { e ->
+                        Toast.makeText(
+                            this.context,
+                            e.toString(),
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
             } else {
                 Toast.makeText(
                     this.context,
