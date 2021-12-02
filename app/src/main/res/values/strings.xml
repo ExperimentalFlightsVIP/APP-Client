@@ -15,18 +15,18 @@
     <string name="menu_send">Send</string>
 
     <string name="order_text">Order Drone</string>
-    <string name="choose_station_text">Choose Delivery Station</string>
+    <string name="choose_station_text">Select a delivery station.</string>
     <string name="west_button">West Campus</string>
     <string name="center_button">Student Center</string>
     <string name="east_button">East Campus</string>
-    <string name="choose_package_text">Choose Package</string>
+    <string name="choose_package_text">Select a package to deliver.</string>
     <string-array name="packages_array">
         <item>Modenna Disposable Face Mask Black 50Pcs</item>
         <item>EO Botanical Hand Sanitizer Gel, Lavender, 8 Ounce</item>
         <item>Terasic DE10-Lite</item>
         <item>Band-Aid Brand Flexible Fabric Adhesive Bandages for Wound Care and First Aid, Assorted Sizes, 100 Ct, Beige</item>
     </string-array>
-    <string name="gtid_text">Confirm GTID</string>
+    <string name="gtid_text">Please confirm your GTID to submit the order.</string>
     <string name="gtid_hint">GTID</string>
     <string name="submit_button_text">SUBMIT</string>
 </resources>
