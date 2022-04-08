@@ -6,4 +6,110 @@
     android:layout_height="match_parent"
     tools:context=".SettingsActivity">
 
+    <EditText
+        android:id="@+id/editTextTextPassword2"
+        android:layout_width="284dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="Confirm password"
+        android:ems="10"
+        android:inputType="textPassword"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="EditableContentDescCheck,EditableContentDescCheck"
+        tools:visibility="visible" />
+
+    <EditText
+        android:id="@+id/editTextTextPassword"
+        android:layout_width="284dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="10dp"
+        android:contentDescription="Enter new password here"
+        android:ems="10"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword2"
+        tools:ignore="EditableContentDescCheck,EditableContentDescCheck" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="130dp"
+        android:text="Confirm Changes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="284dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="10dp"
+        android:gravity="center"
+        android:text="Please enter your new password:"
+        app:layout_constraintBottom_toTopOf="@+id/editTextTextPassword2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="284dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="11dp"
+        android:gravity="center"
+        android:text="Update Password"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch2" />
+
+    <Switch
+        android:id="@+id/switch1"
+        android:layout_width="284dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_vertical"
+        android:paddingLeft="35dp"
+        android:paddingRight="20dp"
+        android:text="Notifications"
+        android:thumbTint="@color/colorPrimary"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/switch2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible" />
+
+    <Switch
+        android:id="@+id/switch2"
+        android:layout_width="284dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="62dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="59dp"
+        android:paddingLeft="35dp"
+        android:paddingRight="20dp"
+        android:text="Dark Mode"
+        android:thumbTint="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/switch1" />
 </androidx.constraintlayout.widget.ConstraintLayout>
